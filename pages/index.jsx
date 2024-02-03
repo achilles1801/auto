@@ -1,15 +1,17 @@
 "use client"
+import Inputfield from "@/components/ui/inputfield"
 
 export default function Home() {
   return (
 <main className="bg-[#E4E4E4] min-h-screen w-full  ">
+<Inputfield />
   <div className="container mx-auto pt-16 pb-4 flex flex-col lg:flex-row justify-between items-start">
 
-  <div className="flex flex-col flex-grow lg:flex-row justify-start gap-2 order-2 w-full">
-  <img src="/Car1.jpg" alt="Car Image 1" className="object-cover rounded-xl shadow-lg lg:w-[354px] h-32 lg:h-[443px] lg:flex-grow" />
-  <img src="/Car2.jpg" alt="Car Image 2" className="object-cover rounded-xl shadow-lg lg:w-[226px] h-32 lg:h-[443px] lg:flex-grow" />
-  <img src="/Car3.jpg" alt="Car Image 3" className="object-cover rounded-xl shadow-lg lg:w-[121px] h-32 lg:h-[443px] lg:flex-grow-0" />
-</div>
+    <div className="flex flex-col flex-grow lg:flex-row justify-start gap-2 order-2 w-full">
+    <img src="/Car1.jpg" alt="Car Image 1" className="object-cover rounded-xl shadow-lg lg:w-[354px] h-32 lg:h-[443px] lg:flex-grow" />
+    <img src="/Car2.jpg" alt="Car Image 2" className="object-cover rounded-xl shadow-lg lg:w-[226px] h-32 lg:h-[443px] lg:flex-grow" />
+    <img src="/Car3.jpg" alt="Car Image 3" className="object-cover rounded-xl shadow-lg lg:w-[121px] h-32 lg:h-[443px] lg:flex-grow-0" />
+    </div>
 
     {/* Text container */}
     <div className="w-full p-4 flex flex-col justify-center pt-3 sm:pt-5 lg:pt-32   text-center lg:w-2/4 lg:text-left order-1" style={{ fontFamily: "'Bebas Neue', cursive" }}>
