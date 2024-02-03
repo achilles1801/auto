@@ -1,5 +1,5 @@
 "use client"
-
+import Carsearch from "@components/carsearch"
 
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
   <span className="bg-gray-100 text-[#AF1414] text-4xl">BUY </span>
   <span className="bg-gray-100  text-4xl">USED CARS</span>
 </h2>
+<Carsearch />
     </main>
     </section>
 
