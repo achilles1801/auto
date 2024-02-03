@@ -4,7 +4,6 @@ import Navbar from "../components/navbar";
 export default function Home() {
   return (
     <main className="bg-[#E4E4E4] min-h-screen">
-      <Navbar />
       <div className="container mx-auto pt-16 pb-4 px-4 flex justify-between items-start"> {/* Increased padding-top here */}
 
         {/* Text container */}
