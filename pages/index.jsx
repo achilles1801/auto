@@ -1,5 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Inputfield from "@/components/ui/inputfield"
+
 
 export default function Home() {
   const router = useRouter();
@@ -19,6 +21,7 @@ export default function Home() {
 
   return (
     <main className="bg-[#E4E4E4] min-h-screen w-full">
+      <Inputfield />
       <div className="container mx-auto pt-16 pb-4 flex flex-col lg:flex-row justify-between items-start">
         {/* Image section kept as is per request */}
         <div className="flex flex-col flex-grow lg:flex-row justify-start gap-2 order-2 w-full">
