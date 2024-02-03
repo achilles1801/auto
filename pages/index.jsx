@@ -1,41 +1,38 @@
 "use client"
 import Navbar from "../components/navbar";
 
-
 export default function Home() {
   return (
-
-    <main>
+    <main className="bg-[#E4E4E4] min-h-screen">
       <Navbar />
-      <div className="container mx-auto p-4">
-        <div className="flex flex-col md:flex-row">
+      <div className="container mx-auto pt-16 pb-4 px-4 flex justify-between items-start"> {/* Increased padding-top here */}
 
-          {/* Text container */}
-          <div className="md:w-1/2 p-4">
-            <p className="text - lg">
-              Drive Excellence Buy, Rent, Tint
-            </p>
-          </div>
+        {/* Text container */}
+        <div className="w-2/4 p-4 flex flex-col justify-center pt-16" style={{ fontFamily: "'Bebas Neue', cursive" }}>
+          <span className="pt-16"> </span>
+          <span className="text-6xl text-black leading-tight">Drive <span className="text-[#AF1414]">Excellence</span></span> {/* Increased font size and applied Bebas Neue */}
+          <span className="text-6xl text-black leading-tight">Buy, Rent, Tint</span> {/* Increased font size */}
+        </div>
 
-          {/* Image container */}
-          <div className="md:w-1/2 flex flex-row md:flex-col space-x-2 md:space-x-0 md:space-y-2 p-4">
-          <div className="flex-1">
-            {/* Replace with your actual image */}
-            <img src="/path-to-your-image-1.jpg" alt="Image 1" className="w-full h-auto" />
+        {/* Image container */}
+        <div className="flex-grow flex justify-end gap-2">
+          <div className="w-[354px] max-w-full" style={{ height: '443px' }}>
+            <img src="/Car1.jpg" alt="Car Image 1" className="w-full h-full object-cover rounded-lg shadow-lg" />
           </div>
-          <div className="flex-1">
-            {/* Replace with your actual image */}
-            <img src="/path-to-your-image-2.jpg" alt="Image 2" className="w-full h-auto" />
+          <div className="w-[226px] max-w-full" style={{ height: '443px' }}>
+            <img src="/Car2.jpg" alt="Car Image 2" className="w-full h-full object-cover rounded-lg shadow-lg" />
           </div>
-          <div className="flex-1">
-            {/* Replace with your actual image */}
-            <img src="/path-to-your-image-3.jpg" alt="Image 3" className="w-full h-auto" />
+          <div className="w-[121px] max-w-full" style={{ height: '443px' }}>
+            <img src="/Car3.jpg" alt="Car Image 3" className="w-full h-full object-cover rounded-lg shadow-lg" />
           </div>
         </div>
-        </div>
+
       </div>
-
     </main>
-
   );
 }
+
+
+
+
+
