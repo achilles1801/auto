@@ -21,43 +21,37 @@ const Navbar = () => {
   const activeBar = 'border-b-2 border-red-600';
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between">
-          {/* logo */}
-          <div className="flex items-center space-x-4">
+  <nav className="bg-white shadow-lg flex justify-between items-center w-full md:w-full sm:w-full ">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between">
+        {/* logo */}
+        <div className="flex items-center space-x-4">
           <Link href="/" legacyBehavior>
-              <a className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                <img src="/Logo.jpeg" alt="Logo" className="h-6 w-auto mr-2" /> 
-                <span className="font-bold" style={{color:'black'}}>AMO 
-                  <span style={{color: '#a02820'}}> AUTO SALES</span>
-                </span>
+            <a className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+              <img src="/Logo.jpeg" alt="Logo" className="h-6 w-auto mr-2 sm:h-8 sm:w-auto" /> 
+              <span className="font-bold hidden sm:block" style={{color:'black'}}>AMO 
+                <span style={{color: '#a02820'}}> AUTO SALES</span>
+              </span>
+            </a>
+          </Link>
+        </div>
+
+        {/* primary nav */}
+        <div className="hidden sm:flex items-center space-x-1">
+          {navItems.map((item) => (
+            <Link href={item.href} key={item.name} legacyBehavior>
+              <a
+                className={`py-5 px-3 ${activeNav === item.name.toLowerCase() ? activeTextColor : textColor} hover:text-gray-900 cursor-pointer ${activeNav === item.name.toLowerCase() ? activeBar : inactiveBar}`}
+                onClick={() => setActiveNav(item.name.toLowerCase())}
+              >
+                {item.name}
               </a>
             </Link>
-          </div>
-
-          {/* primary nav */}
-          <div className="flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link href={item.href} key={item.name} legacyBehavior>
-                <a
-                  className={`py-5 px-3 ${activeNav === item.name.toLowerCase() ? activeTextColor : textColor} hover:text-gray-900 cursor-pointer ${activeNav === item.name.toLowerCase() ? activeBar : inactiveBar}`}
-                  onClick={() => setActiveNav(item.name.toLowerCase())}
-                >
-                  {item.name}
-                </a>
-              </Link>
-            ))}
-          </div>
-            {/* mode toggle */}
-            <div className="flex items-center">
-            <ModeToggle />
-          </div>
-
-
+          ))}
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
   );
 };
 
