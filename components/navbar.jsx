@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { ModeToggle } from './ui/mode-toggle';
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = useState('home');
 
   const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'Cars for Buy', href: '#' },
-    { name: 'Cars for Rent', href: '#' },
-    { name: 'Our Services', href: '#' },
-    { name: 'Tint', href: '#' },
-    { name: 'About Us', href: '#' },
-    { name: 'FAQs', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Cars for Buy', href: '/cars-for-buy' },
+    { name: 'Cars for Rent', href: '/cars-for-rent' },
+    { name: 'Our Services', href: '/services' },
+    { name: 'Tint', href: '/tint' },
+    { name: 'About Us', href: '/about' },
+    { name: 'FAQs', href: '/faq' },
+    { name: 'Contact Us', href: '/contact'}
   ];
 
   const textColor = 'text-gray-400';
@@ -24,26 +27,32 @@ const Navbar = () => {
         <div className="flex justify-between">
           {/* logo */}
           <div className="flex items-center space-x-4">
-            <a href="#" className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-              <img src="/Logo.jpeg" alt="Logo" className="h-6 w-auto mr-2" /> 
-              <span className="font-bold" style={{color:'black'}}>AMO 
-                <span style={{color: '#a02820'}}> AUTO SALES</span>
-              </span>
-            </a>
+          <Link href="/" legacyBehavior>
+              <a className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+                <img src="/Logo.jpeg" alt="Logo" className="h-6 w-auto mr-2" /> 
+                <span className="font-bold" style={{color:'black'}}>AMO 
+                  <span style={{color: '#a02820'}}> AUTO SALES</span>
+                </span>
+              </a>
+            </Link>
           </div>
 
           {/* primary nav */}
           <div className="flex items-center space-x-1">
             {navItems.map((item) => (
-              <a
-                href={item.href}
-                key={item.name}
-                className={`py-5 px-3 ${activeNav === item.name.toLowerCase() ? activeTextColor : textColor} hover:text-gray-900 cursor-pointer ${activeNav === item.name.toLowerCase() ? activeBar : inactiveBar}`}
-                onClick={() => setActiveNav(item.name.toLowerCase())}
-              >
-                {item.name}
-              </a>
+              <Link href={item.href} key={item.name} legacyBehavior>
+                <a
+                  className={`py-5 px-3 ${activeNav === item.name.toLowerCase() ? activeTextColor : textColor} hover:text-gray-900 cursor-pointer ${activeNav === item.name.toLowerCase() ? activeBar : inactiveBar}`}
+                  onClick={() => setActiveNav(item.name.toLowerCase())}
+                >
+                  {item.name}
+                </a>
+              </Link>
             ))}
+          </div>
+            {/* mode toggle */}
+            <div className="flex items-center">
+            <ModeToggle />
           </div>
 
 

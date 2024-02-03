@@ -6,7 +6,7 @@ export default function Home() {
   return (
 
     <main>
-      <p1>Cars For Buy</p1>
+      <p1>Tint</p1>
 
     </main>
 

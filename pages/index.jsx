@@ -1,12 +1,11 @@
 "use client"
-import Navbar from "../components/navbar";
+
 
 
 export default function Home() {
   return (
 
     <main>
-      <Navbar />
       <div className="container mx-auto p-4">
         <div className="flex flex-col md:flex-row">
 
