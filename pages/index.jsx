@@ -21,7 +21,6 @@ export default function Home() {
 
   return (
     <main className="bg-[#E4E4E4] min-h-screen w-full">
-      <Inputfield />
       <div className="container mx-auto pt-16 pb-4 flex flex-col lg:flex-row justify-between items-start">
         {/* Image section kept as is per request */}
         <div className="flex flex-col flex-grow lg:flex-row justify-start gap-2 order-2 w-full">
@@ -34,8 +33,15 @@ export default function Home() {
         <div className="w-full p-4 flex flex-col justify-center pt-3 sm:pt-5 lg:pt-32 text-center lg:w-2/4 lg:text-left order-1" style={{ fontFamily: "'Bebas Neue', cursive" }}>
           <span className="text-5xl text-black leading-tight">Drive <span className="text-[#AF1414]">Excellence</span></span>
           <span className="text-5xl text-black leading-tight">Buy, Rent, Tint</span>
+          <div className="absolute z-10 w-full lg:w-1/4 top-full lg:top-1/2 -translate-y-full lg:-translate-y-2/2 px-4">
+          <div className="w-full max-w-lg mx-auto">
+            <Inputfield /> {/* Adjust this div as needed */}
+          </div>
+        </div>
         </div>
       </div>
+      
+      
 
       {/* Makes section */}
       <div className="p-2 lg:mt-32" style={{ fontFamily: "'Bebas Neue', cursive" }}>
