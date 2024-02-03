@@ -9,7 +9,6 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'Cars for Buy', href: '/cars-for-buy' },
     { name: 'Cars for Rent', href: '/cars-for-rent' },
-    { name: 'Our Services', href: '/services' },
     { name: 'Tint', href: '/tint' },
     { name: 'About Us', href: '/about' },
     { name: 'FAQs', href: '/faq' },
