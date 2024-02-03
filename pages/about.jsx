@@ -16,8 +16,8 @@ export default function Home() {
   <span className="bg-gray-100 text-[#AF1414] text-4xl">who we are</span>
 </h2>
     </main>
-    <div className="w-full max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-xl ">
-      
+    <div className="mt-10 px-8 py-8 w-full max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-xl " style={{fontFamily: "'Poppins', cursive"}}>
+    Welcome to Amo Auto, the premier destination for automotive enthusiasts in Roswell, Georgia. At Amo Auto, we are passionate about cars and committed to delivering excellence in every aspect of our service. Our dealership is home to a wide selection of high-quality vehicles, each carefully chosen to meet the diverse needs and preferences of our customers. From sleek sports cars to reliable family vehicles, we have something for everyone. Our knowledgeable and friendly staff are dedicated to providing a seamless and enjoyable car-buying experience, ensuring that every client leaves our showroom with not just a car, but a vehicle that perfectly fits their lifestyle. At Amo Auto, we don't just sell cars; we build lasting relationships, driven by our love for cars and our commitment to our customers.
     </div>
     </section>
 
