@@ -65,68 +65,62 @@ const Contact = () => {
 
 
   return (
-<section className='flex flex-col items-center justify-center min-h-screen bg-gray-100'>
-  
-  {/* Assuming you have an Alert component that takes a prop 'show', uncomment if necessary */}
-  {/* {alert.show && <Alert {...alert} />} */}
+    
+<div className="bg-gray-100 min-h-screen p-8">
 
-  <div className='w-full max-w-md px-8 py-6 m-4 bg-white rounded-lg shadow'>
-    <h1 className='text-3xl font-semibold text-center mb-6'>Get in Touch</h1> 
+  {/* Contact Form */}
+  <section className="w-full max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md">
+    <h2 className="text-3xl font-semibold text-center mb-6">Get in Touch</h2>
 
-    <form onSubmit={handleSubmit} className='space-y-4'>
+    <form className="space-y-4">
       <div>
-        <label className='block mb-2 text-sm font-medium text-gray-700'>
+        <label className="block mb-2 text-sm font-medium text-gray-700">
           Name
         </label>
         <input
-          type='text'
-          name='name'
-          className='w-full px-4 py-2 border border-gray-300 rounded-md focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50'
-          placeholder='John Doe'
+          type="text"
+          name="name"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50"
+          placeholder="John Doe"
           required
-          value={form.name}
-          onChange={handleChange}
         />
       </div>
+
       <div>
-        <label className='block mb-2 text-sm font-medium text-gray-700'>
+        <label className="block mb-2 text-sm font-medium text-gray-700">
           Email
         </label>
         <input
-          type='email'
-          name='email'
-          className='w-full px-4 py-2 border border-gray-300 rounded-md focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50'
-          placeholder='example@gmail.com'
+          type="email"
+          name="email"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50"
+          placeholder="example@gmail.com"
           required
-          value={form.email}
-          onChange={handleChange}
         />
       </div>
+
       <div>
-        <label className='block mb-2 text-sm font-medium text-gray-700'>
+        <label className="block mb-2 text-sm font-medium text-gray-700">
           Your Message
         </label>
         <textarea
-          name='message'
-          rows={4}
-          className='w-full px-4 py-2 border border-gray-300 rounded-md focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50'
-          placeholder='Let us know how we can help!'
-          value={form.message}
-          onChange={handleChange}
+          name="message"
+          rows="4"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50"
+          placeholder="Let us know how we can help!"
         />
       </div>
 
       <button
-  type='submit'
-  disabled={isLoading}
-  style={{ backgroundColor: isLoading ? '#a02820' : '#a02820' }}
-  className='w-full px-4 py-3 text-sm font-medium text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75'
->
-  {isLoading ? "Sending..." : "Submit"}
-</button>
+        type="submit"
+        className="w-full px-4 py-3 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
+      >
+        Submit
+      </button>
     </form>
-  </div>
-</section>
+  </section>
+</div>
+
 
   );
 };
