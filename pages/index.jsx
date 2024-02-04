@@ -89,7 +89,7 @@ export default function Home() {
           </h2>
 
           {/* Image containers for car models */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 lg:pb-24">
             {models.map((model, index) => (
               <div key={index} className="border rounded-lg overflow-hidden shadow-lg flex flex-col justify-center items-center p-2 w-40 h-26 lg:w-1/6 lg:h-36 bg-white m-2 cursor-pointer" onClick={navigateToBuyPage}>
                 <img src={model.src} alt={`${model.name} Model`} className="object-contain h-20 w-60" />
