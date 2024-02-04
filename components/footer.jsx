@@ -9,15 +9,15 @@ export default function Footer() {
     (<footer
       className="flex flex-col items-center justify-center py-6 space-y-4 bg-[#AF1414] dark:bg-zinc-800">
       <div className="flex space-x-4">
-        <Link aria-label="Facebook" href="https://www.facebook.com/amoautosales/">
-          <FacebookIcon className="h-5 w-5 text-zinc-900 dark:text-zinc-50" />
-        </Link>
-        <Link aria-label="Twitter" href="#">
-          <TwitterIcon className="h-5 w-5 text-zinc-900 dark:text-zinc-50" />
-        </Link>
-        <Link aria-label="Instagram" href="https://www.instagram.com/amoautosales/?hl=en">
-          <InstagramIcon className="h-5 w-5 text-zinc-900 dark:text-zinc-50" />
-        </Link>
+      <Link aria-label="Facebook" href="https://www.facebook.com/amoautosales/" target="_blank">
+  <FacebookIcon className="h-5 w-5 text-zinc-900 dark:text-zinc-50" />
+</Link>
+<Link aria-label="Twitter" href="#" target="_blank">
+  <TwitterIcon className="h-5 w-5 text-zinc-900 dark:text-zinc-50" />
+</Link>
+<Link aria-label="Instagram" href="https://www.instagram.com/amoautosales/?hl=en" target="_blank">
+  <InstagramIcon className="h-5 w-5 text-zinc-900 dark:text-zinc-50" />
+</Link>
       </div>
       <p className="text-xs text-white dark:text-zinc-400">© 2024 AMO Auto. All rights reserved.</p>
     </footer>)
