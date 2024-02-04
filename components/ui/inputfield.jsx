@@ -16,7 +16,7 @@ export default function InputField({ className,...props}) {
             <Button 
                 onClick={() => toggleActive(true)}
                 style={{
-                    backgroundColor: isRentActive ? 'red' : 'white',
+                    backgroundColor: isRentActive ? '#af1414' : 'white',
                     color: isRentActive ? 'white' : '#af1414'
                 }}
             >
@@ -25,8 +25,8 @@ export default function InputField({ className,...props}) {
             <Button 
                 onClick={() => toggleActive(false)}
                 style={{
-                    backgroundColor: isRentActive ? 'white' : 'red',
-                    color: isRentActive ? '#af1414' : 'white'
+                  backgroundColor: isRentActive ? '#af1414' : 'white',
+                  color: isRentActive ? 'white' : '#af1414'
                 }}
             >
                 Cars For Buy
@@ -39,13 +39,13 @@ export default function InputField({ className,...props}) {
             </label>
             <Input className={`border-gray-300 ${isRentActive ? 'bg-white' : 'bg-[#af1414]'}`} id="pickup-date" placeholder="01-01-2024" type="text" />
           </div>
-          <div className="flex flex-col space-y-1">
+          <div className="flex flex-col space-y-1 ">
             <label className="text-sm font-medium" htmlFor="dropoff-date">
               Dropoff Date
             </label>
             <Input className={`border-gray-300 ${isRentActive ? 'bg-white' : 'bg-[#af1414]'}`} id="dropoff-date" placeholder="01-07-2024" type="text" />
           </div>
-          <Button className="bg-[#af1414] text-white hover:bg-[#af1414]">Search</Button>
+          <Button className="bg-[#af1414d9]  text-white hover:bg-[#af1414]">Search</Button>
         </div>
       </div>
     </div>

@@ -36,14 +36,12 @@ export default function Nav() {
         <div className="flex justify-between">
           {/* logo */}
           <div className="hidden sm:flex items-center space-x-4 pr-8">
-  <Link href="/" legacyBehavior>
     <a className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
     <Image src="/Logo.jpeg" alt="Logo" width={50} height={50} />
       <span className="font-bold hidden sm:block" style={{color:'black'}}>AMO 
         <span style={{color: '#a02820'}}> AUTO SALES</span>
       </span>
     </a>
-  </Link>
 </div>
 
           {/* primary nav */}
