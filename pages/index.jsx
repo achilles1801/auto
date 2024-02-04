@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Inputfield from "@/components/ui/inputfield"
+import Testimonial from '@components/testimonial';
 
 
 export default function Home() {
@@ -33,15 +34,14 @@ export default function Home() {
         </div>
 
         {/* Text container */}
-        <div className="w-full p-4 flex flex-col justify-center pt-3 sm:pt-5 lg:pt-32 text-center lg:w-2/4 lg:text-left order-1" style={{ fontFamily: "'Bebas Neue', cursive" }}>
-          <span className="text-5xl text-black leading-tight">Drive <span className="text-[#AF1414]">Excellence</span></span>
-          <span className="text-5xl text-black leading-tight">Buy, Rent, Tint</span>
-          <div className="hidden lg:block pt-9">
-            <Inputfield />
-          </div>
-        </div>
+        <div className="container mx-auto pt-16 pb-4 flex flex-col justify-between sm:pt-5 lg:pt-32 text-center lg:w-2/4 lg:text-left order-1" style={{ fontFamily: "'Bebas Neue', cursive" }}>
+  <div className="flex flex-col items-center">
+    <span className="text-5xl text-black leading-tight">Drive <span className="text-[#AF1414]">Excellence</span></span>
+    <span className="text-5xl text-black leading-tight">Buy, Rent, Tint</span>
+  </div>
+  <Testimonial/>
+</div>
       </div>
-      
       
 
       {/* Makes section */}
