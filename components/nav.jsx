@@ -12,25 +12,29 @@ import { RiFilePaper2Line } from "react-icons/ri";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { FaFileCircleQuestion } from "react-icons/fa6";
 import { FaPhoneVolume } from "react-icons/fa6";
+
+
 export default function Nav() {
   const [activeNav, setActiveNav] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+
   const isBuyPage = router.pathname === '/cars-for-buy';
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (name) => {
+    setActiveNav(name)
     setIsOpen(false);
   };
 
 
   const navItems = [
-    { name: 'Home', href: '/', icon: <FaHome /> },
-    { name: 'Buy', href: '/cars-for-buy', icon: <FaCar /> },
-    { name: 'Rent', href: '/cars-for-rent', icon: <MdCarRental /> },
-    { name: 'Tint', href: '/tint', icon: <RiFilePaper2Line /> },
-    { name: 'About', href: '/about', icon: <BsInfoCircleFill /> },
-    { name: 'FAQs', href: '/faq', icon: <FaFileCircleQuestion />},
-    { name: 'Contact', href: '/contact', icon: <FaPhoneVolume />}
+    { name: 'Home', href: '/', icon: <FaHome style={{ color: 'black' }}/> },
+    { name: 'Buy', href: '/cars-for-buy', icon: <FaCar style={{ color: 'black' }} /> },
+    { name: 'Rent', href: '/cars-for-rent', icon: <MdCarRental style={{ color: 'black' }} /> },
+    { name: 'Tint', href: '/tint', icon: <RiFilePaper2Line style={{ color: 'black' }} /> },
+    { name: 'About', href: '/about', icon: <BsInfoCircleFill style={{ color: 'black' }} /> },
+    { name: 'FAQs', href: '/faq', icon: <FaFileCircleQuestion style={{ color: 'black' }} />},
+    { name: 'Contact', href: '/contact', icon: <FaPhoneVolume style={{ color: 'black' }} />}
   ];
 
   const textColor = 'text-gray-400';
@@ -67,18 +71,22 @@ export default function Nav() {
           </div>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-          <div className="sm:hidden cursor-pointer py-4">
-  <Image src="/Logo.jpeg" alt="Hamburger Icon" width={50} height={50} />
-</div>
-            </SheetTrigger>
+  <div className="sm:hidden cursor-pointer py-4 flex items-center">
+    <Image src="/Logo.jpeg" alt="Logo" width={50} height={50} className="mr-2" />
+    <span className="font-bold text-black">AMO 
+      <span className="text-[#a02820]"> AUTO SALES</span>
+    </span>
+  </div>
+</SheetTrigger>
+
             <SheetContent side="top" className="min-w-[250px] bg-[#AF1414]">
             {navItems.map((item) => (
   <Link href={item.href} key={item.name} legacyBehavior>
     <a 
-      className={`flex items-center  block p-4 text-lg rounded ${activeNav === item.name.toLowerCase() ? 'bg-white text-black' : 'bg-[#AF1414] text-black'}`} 
-      onClick={() =>{
+className={`flex items-center block p-4 text-lg rounded ${activeNav === item.name.toLowerCase() ? 'bg-white text-black' : 'text-white'} hover:bg-white hover:text-black transition-colors duration-150`}
+onClick={() =>{
         setActiveNav(item.name.toLowerCase());
-        handleLinkClick();
+        handleLinkClick(item.name.toLowerCase());
       }}
     >
       <span className="mr-2">{item.icon}</span>
