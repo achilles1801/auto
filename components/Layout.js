@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import { ThemeProvider } from './theme-provider';
 import Nav from './Nav';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
       <div>
         <Nav />
         {children}
+        <Footer />
       </div>
     </ThemeProvider>
   );
