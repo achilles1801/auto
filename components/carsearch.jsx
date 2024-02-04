@@ -5,26 +5,54 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { CardContent, Card } from "@/components/ui/card"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Filter from "@/components/filter";
 
 export default function Carseach() {
   const handleCardClick = () => {
     // Replace the URL with your actual Calendly link
     window.location.href = "https://calendly.com/your-username/15min";
   };
+  const [carsData, setCarsData] = useState([]);
+  const [filteredCars, setFilteredCars] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState('All');
+  const carTypes = ['Economy', 'SUV', 'Luxury'];
+
+  useEffect(() => {
+    // Fetch your car data here and set it in the carsData state
+    // For example:
+    // setCarsData(fetchCarData());
+    // Then set the filteredCars state to the full car data initially
+    setFilteredCars(carsData);
+  }, []);
+
+  const handleFilterClick = () => {
+    setShowFilters(!showFilters);
+
+  };
+  const handleFilterChange = (event) => {
+    setSelectedFilter(event.target.value);
+    applyFilters();
+  };
+
+  const applyFilters = () => {
+    const filtered = carsData.filter(car => {
+      return selectedFilter === 'All' || car.type === selectedFilter;
+    });
+    setFilteredCars(filtered);
+  };
+  
+  
+
   return (
     (<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center py-4">
-        <Button className="bg-gray-100 hover:bg-gray-200 text-gray-800" variant="outline">
-          <FilterIcon className="text-gray-600" />
-          Filter{"\n              "}
-        </Button>
+      <CarIcon className="text-gray-600 m-2" />
+      <Filter/>
         <div className="flex space-x-2">
           <div className="flex items-center bg-gray-100 rounded overflow-hidden">
-            <CarIcon className="text-gray-600 m-2" />
-            <Input className="bg-gray-100 border-none" placeholder="Search..." type="search" />
           </div>
-          <Button className="bg-[#a02820] hover:bg-[#a02820] text-white">Search</Button>
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
@@ -45,7 +73,7 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
@@ -69,7 +97,7 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
@@ -93,7 +121,7 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
@@ -117,7 +145,7 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
@@ -141,7 +169,7 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
@@ -165,7 +193,7 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
@@ -189,7 +217,7 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
@@ -213,42 +241,13 @@ export default function Carseach() {
             </div>
             <div className="ml-2 pt-4">
               <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
+              <p className="text-sm">Toyota Corolla</p>
               <p className="text-xs">5 people</p>
               <p className="text-xs">Roswell, Georgia, USA</p>
             </div>  
           </div>
         </CardContent>
       </Card>
-      <Card className="cursor-pointer hover:shadow-lg" onClick={handleCardClick}>
-        <CardContent>
-          <div className="flex">
-            <div>
-              <p className="text-sm pt-4">Toyota Corolla</p>
-              <img
-                alt="Toyota Corolla"
-                className="h-20 w-36"
-                height="100"
-                src="/sedan.png"
-                style={{
-                  objectFit: "contain",
-                }}
-                width="150" />
-            </div>
-            <div className="ml-2 pt-4">
-              <p className="text-sm font-semibold">Economy</p>
-              <p className="text-sm">Toyota Corolla or similar</p>
-              <p className="text-xs">5 people</p>
-              <p className="text-xs">Roswell, Georgia, USA</p>
-            </div>  
-          </div>
-        </CardContent>
-      </Card>
-      </div>
-      <div className="flex justify-end py-4">
-        <Button className="bg-[#a02820] hover:bg-red-600 text-white">
-          <ArrowRightIcon className="text-white" />
-        </Button>
       </div>
     </div>)
   );
