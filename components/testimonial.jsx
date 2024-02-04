@@ -6,7 +6,7 @@ import { CardContent, CardTitle, CardDescription, CardHeader, Card } from "@/com
 
 export default function Testimonial() {
   return (
-    (<div className="flex pr-8 justify-center min-h-screen ">
+    (<div className="flex pr-8 justify-center ">
       <div className="max-w-lg mx-auto pr-1/4 rounded-lg shadow-offset-black offset-x-10 offset-y-10">
         <Card className="pt-6 pr-8 pl-8 font-poppins">
           <CardContent className="text-xl relative mb-2">
