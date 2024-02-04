@@ -65,7 +65,7 @@ export default function Nav() {
   <Image src="/Logo.jpeg" alt="Hamburger Icon" width={50} height={50} />
 </div>
             </SheetTrigger>
-            <SheetContent side="left" className="min-w-[250px]">
+            <SheetContent side="left" className="min-w-[250px] bg-[#AF1414]">
   {navItems.map((item) => (
     <Link href={item.href} key={item.name} legacyBehavior>
       <a 
