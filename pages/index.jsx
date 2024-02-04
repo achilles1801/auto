@@ -25,23 +25,26 @@ export default function Home() {
 
   return (
     <main className="bg-[#E4E4E4] min-h-screen w-full">
-      <div className="container mx-auto h:1/2 pt-16 pb-4 flex flex-col lg:flex-row justify-between items-start">
-        {/* Image section kept as is per request */}
-        <div className="flex flex-col flex-grow lg:flex-row justify-start gap-2 order-2 w-full">
-          <img src="/Car1.jpg" alt="Car Image 1" className="object-cover rounded-xl shadow-lg lg:w-[354px] h-32 lg:h-[443px] lg:flex-grow" onClick={navigateToBuyPage} />
-          <img src="/Car2.jpg" alt="Car Image 2" className="object-cover rounded-xl shadow-lg lg:w-[226px] h-32 lg:h-[443px] lg:flex-grow" onClick={navigateToBuyPage} />
-          <img src="/Car3.jpg" alt="Car Image 3" className="object-cover rounded-xl shadow-lg lg:w-[121px] h-32 lg:h-[443px] lg:flex-grow-0" onClick={navigateToBuyPage} />
-        </div>
+  <div className="container mx-auto h-1/2 pt-16 pb-4 flex flex-col lg:flex-row justify-between items-center">
+    {/* Image section */}
+    <div className="flex flex-col flex-grow lg:flex-row justify-start gap-2 order-2 w-full">
+      <img src="/Car1.jpg" alt="Car Image 1" className="object-cover rounded-xl shadow-lg lg:w-[354px] h-32 lg:h-[443px] lg:flex-grow" onClick={navigateToBuyPage} />
+      <img src="/Car2.jpg" alt="Car Image 2" className="object-cover rounded-xl shadow-lg lg:w-[226px] h-32 lg:h-[443px] lg:flex-grow" onClick={navigateToBuyPage} />
+      <img src="/Car3.jpg" alt="Car Image 3" className="object-cover rounded-xl shadow-lg lg:w-[121px] h-32 lg:h-[443px] lg:flex-grow-0" onClick={navigateToBuyPage} />
+    </div>
 
-        {/* Text container */}
-        <div className="w-full p-4 flex flex-col justify-center pt-3 sm:pt-5 lg:pt-16 lg:w-2/4 lg:text-left order-1" style={{ fontFamily: "'Bebas Neue', cursive" }}>
-  <div className="flex flex-col items-start pb-3">
-    <span className="text-5xl text-black leading-tight">Drive <span className="text-[#AF1414]">Excellence</span></span>
-    <span className="text-5xl text-black leading-tight">Buy, Rent, Tint</span>
-  </div>
-  <Testimonial/>
-</div>
+    {/* Text container */}
+    <div className="w-full p-4 flex flex-col justify-center pt-3 sm:pt-5 lg:pt-16 lg:w-2/4 lg:text-left order-1 text-center" style={{ fontFamily: "'Bebas Neue', cursive" }}>
+      <div className="flex flex-col items-center lg:items-start pb-3">
+        <span className="text-5xl text-black leading-tight">Drive <span className="text-[#AF1414]">Excellence</span></span>
+        <span className="text-5xl text-black leading-tight">Buy, Rent, Tint</span>
       </div>
+      {/* Testimonial hidden on screens smaller than large (lg) */}
+      <div className="hidden lg:block">
+        <Testimonial/>
+      </div>
+    </div>
+  </div>
       
 
       {/* Makes section */}
