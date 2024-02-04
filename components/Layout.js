@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import { ThemeProvider } from './theme-provider';
+import Nav from './Nav';
 
 const Layout = ({ children }) => {
   return (
@@ -12,7 +13,7 @@ const Layout = ({ children }) => {
       disableTransitionOnChange
     >
       <div>
-        <Navbar />
+        <Nav />
         {children}
       </div>
     </ThemeProvider>

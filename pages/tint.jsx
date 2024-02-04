@@ -5,24 +5,24 @@
 export default function Home() {
   return (
 
-<div className="flex min-h-screen">
+<div className="flex min-h-screen justify-center items-center">
   {/* Left side with image */}
   <div className="w-1/2">
     <img src="/Car4.jpg" alt="Car Image" className="object-cover w-full h-full" />
   </div>
-      <section className="bg-gray-100 p-8 flex justify-center items-center" style={{ fontFamily: "'Bebas Neue', cursive" }}>
-        <div className="text-center">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-24 h-1 bg-red-600"></div>
-            <span className="px-4 text-md mx-2 text-gray-700">tint</span>
-            <div className="w-24 h-1 bg-red-600"></div>
-          </div>
-          <h2 className="text-3xl font-semibold mb-4 relative pt-2">
-            <span className="bg-gray-100 text-[#AF1414] text-4xl">experience </span>
-            <span className="bg-gray-100 text-4xl">excellence</span>
-          </h2>
-        </div>
-      </section>
+  <section className="bg-gray-100 p-8 flex justify-center items-center" style={{ fontFamily: "'Bebas Neue', cursive" }}>
+    <div className="text-center ">
+      <div className="flex items-center justify-center mb-4">
+        <div className="w-24 h-1 bg-red-600"></div>
+        <span className="px-4 text-md mx-2 text-gray-700">tint</span>
+        <div className="w-24 h-1 bg-red-600"></div>
+      </div>
+      <h2 className="text-3xl font-semibold mb-4 relative pt-2">
+        <span className="bg-gray-100 text-[#AF1414] text-4xl">experience </span>
+        <span className="bg-gray-100 text-4xl">excellence</span>
+      </h2>
+    </div>
+  </section>
 
   {/* Right side with text */}
   <div className=" w-full p-6" style={{fontFamily: "'Poppins', cursive"}}>
