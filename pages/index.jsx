@@ -5,10 +5,13 @@ import Inputfield from "@/components/ui/inputfield"
 
 export default function Home() {
   const router = useRouter();
+  const isBuyPage = router.pathname === '/cars-for-buy';
+
 
   // Function to navigate to the cars for buy page
   const navigateToBuyPage = () => {
     router.push('/cars-for-buy');
+
   };
 
   const models = [

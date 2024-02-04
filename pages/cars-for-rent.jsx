@@ -1,4 +1,6 @@
 "use client"
+import Carsearch from "@components/carsearch"
+import Carrentalsearch from "@components/carrentalsearch"
 
 
 export default function Home() {
@@ -15,7 +17,7 @@ export default function Home() {
   <span className="bg-gray-100 text-4xl">CARS </span>
   <span className="bg-gray-100 text-[#AF1414] text-4xl">FOR RENT</span>
 </h2>
-
+<Carrentalsearch />
     </main>
     </section>
 

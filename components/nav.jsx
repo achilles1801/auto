@@ -5,10 +5,14 @@ import Link from "next/link"
 import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
 import Image from 'next/image'
 import { useSheet } from '@/components/ui/sheet';
+import { useRouter } from 'next/router';
+
 
 export default function Nav() {
   const [activeNav, setActiveNav] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const isBuyPage = router.pathname === '/cars-for-buy';
 
   const handleLinkClick = () => {
     setIsOpen(false);
@@ -46,16 +50,16 @@ export default function Nav() {
 
           {/* primary nav */}
           <div className="hidden sm:flex items-center space-x-1 lg:gap-8">
-            {navItems.map((item) => (
-              <Link href={item.href} key={item.name} legacyBehavior>
-                <a
-                  className={`py-5 px-3 ${activeNav === item.name.toLowerCase() ? activeTextColor : textColor} hover:text-gray-900 cursor-pointer ${activeNav === item.name.toLowerCase() ? activeBar : inactiveBar}`}
-                  onClick={() => setActiveNav(item.name.toLowerCase())}
-                >
-                  {item.name}
-                </a>
-              </Link>
-            ))}
+          {navItems.map((item) => (
+  <Link href={item.href} key={item.name} legacyBehavior>
+    <a
+      className={`py-5 px-3 ${router.pathname === item.href ? activeTextColor + ' ' + activeBar : textColor + ' ' + inactiveBar} hover:text-gray-900 cursor-pointer`}
+      onClick={() => setActiveNav(item.name.toLowerCase())}
+    >
+      {item.name}
+    </a>
+  </Link>
+))}
           </div>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -63,7 +67,7 @@ export default function Nav() {
   <Image src="/Logo.jpeg" alt="Hamburger Icon" width={50} height={50} />
 </div>
             </SheetTrigger>
-            <SheetContent side="left" className="min-w-[250px] bg-[#AF1414]">
+            <SheetContent side="top" className="min-w-[250px] bg-[#AF1414]">
   {navItems.map((item) => (
     <Link href={item.href} key={item.name} legacyBehavior>
       <a 
