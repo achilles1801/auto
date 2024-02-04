@@ -69,7 +69,7 @@ export default function Nav() {
   {navItems.map((item) => (
     <Link href={item.href} key={item.name} legacyBehavior>
       <a 
-        className={`flex items-center block p-4 text-lg rounded ${activeNav === item.name.toLowerCase() ? 'bg-white text-black' : 'bg-[#AF1414] text-black'}`} 
+        className={`flex items-center  block p-4 text-lg rounded ${activeNav === item.name.toLowerCase() ? 'bg-white text-black' : 'bg-[#AF1414] text-black'}`} 
         onClick={() =>{
           setActiveNav(item.name.toLowerCase());
           handleLinkClick();
