@@ -6,8 +6,12 @@ import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/compon
 import Image from 'next/image'
 import { useSheet } from '@/components/ui/sheet';
 import { useRouter } from 'next/router';
-
-
+import { FaHome, FaCar, FaQuestion, FaEnvelope, FaInfoCircle } from 'react-icons/fa';
+import { MdCarRental } from "react-icons/md";
+import { RiFilePaper2Line } from "react-icons/ri";
+import { BsInfoCircleFill } from "react-icons/bs";
+import { FaFileCircleQuestion } from "react-icons/fa6";
+import { FaPhoneVolume } from "react-icons/fa6";
 export default function Nav() {
   const [activeNav, setActiveNav] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +24,13 @@ export default function Nav() {
 
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Buy', href: '/cars-for-buy' },
-    { name: 'Rent', href: '/cars-for-rent' },
-    { name: 'Tint', href: '/tint' },
-    { name: 'About', href: '/about' },
-    { name: 'FAQs', href: '/faq' },
-    { name: 'Contact', href: '/contact'}
+    { name: 'Home', href: '/', icon: <FaHome /> },
+    { name: 'Buy', href: '/cars-for-buy', icon: <FaCar /> },
+    { name: 'Rent', href: '/cars-for-rent', icon: <MdCarRental /> },
+    { name: 'Tint', href: '/tint', icon: <RiFilePaper2Line /> },
+    { name: 'About', href: '/about', icon: <BsInfoCircleFill /> },
+    { name: 'FAQs', href: '/faq', icon: <FaFileCircleQuestion />},
+    { name: 'Contact', href: '/contact', icon: <FaPhoneVolume />}
   ];
 
   const textColor = 'text-gray-400';
@@ -68,20 +72,20 @@ export default function Nav() {
 </div>
             </SheetTrigger>
             <SheetContent side="top" className="min-w-[250px] bg-[#AF1414]">
-  {navItems.map((item) => (
-    <Link href={item.href} key={item.name} legacyBehavior>
-      <a 
-        className={`flex items-center  block p-4 text-lg rounded ${activeNav === item.name.toLowerCase() ? 'bg-white text-black' : 'bg-[#AF1414] text-black'}`} 
-        onClick={() =>{
-          setActiveNav(item.name.toLowerCase());
-          handleLinkClick();
-        }}
-      >
-        <img src={`/icons/${item.name.toLowerCase()}.svg`} alt={`${item.name} Icon`} className="mr-2" />
-        {item.name}
-      </a>
-    </Link>
-  ))}
+            {navItems.map((item) => (
+  <Link href={item.href} key={item.name} legacyBehavior>
+    <a 
+      className={`flex items-center  block p-4 text-lg rounded ${activeNav === item.name.toLowerCase() ? 'bg-white text-black' : 'bg-[#AF1414] text-black'}`} 
+      onClick={() =>{
+        setActiveNav(item.name.toLowerCase());
+        handleLinkClick();
+      }}
+    >
+      <span className="mr-2">{item.icon}</span>
+      {item.name}
+    </a>
+  </Link>
+))}
 </SheetContent>
           </Sheet>
         </div>
