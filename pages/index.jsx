@@ -28,9 +28,9 @@ export default function Home() {
   <div className="container mx-auto h-1/2 pt-16 pb-4 flex flex-col lg:flex-row justify-between items-center">
     {/* Image section */}
     <div className="flex flex-col flex-grow lg:flex-row justify-start gap-2 order-2 w-full">
-      <img src="/Car1.jpg" alt="Car Image 1" className="object-cover rounded-xl shadow-lg lg:w-[354px] h-32 lg:h-[443px] lg:flex-grow" onClick={navigateToBuyPage} />
-      <img src="/Car2.jpg" alt="Car Image 2" className="object-cover rounded-xl shadow-lg lg:w-[226px] h-32 lg:h-[443px] lg:flex-grow" onClick={navigateToBuyPage} />
-      <img src="/Car3.jpg" alt="Car Image 3" className="object-cover rounded-xl shadow-lg lg:w-[121px] h-32 lg:h-[443px] lg:flex-grow-0" onClick={navigateToBuyPage} />
+      <img src="/Car1.jpg" alt="Car Image 1" className="object-cover rounded-xl shadow-lg lg:w-[354px] h-32 lg:h-[443px] lg:flex-grow"  />
+      <img src="/Car2.jpg" alt="Car Image 2" className="object-cover rounded-xl shadow-lg lg:w-[226px] h-32 lg:h-[443px] lg:flex-grow"  />
+      <img src="/Car3.jpg" alt="Car Image 3" className="object-cover rounded-xl shadow-lg lg:w-[121px] h-32 lg:h-[443px] lg:flex-grow-0" />
     </div>
 
     {/* Text container */}
