@@ -4,17 +4,22 @@ import { Input } from "@/components/ui/input"
 import { CardContent, Card } from "@/components/ui/card"
 import { useEffect, useState } from "react";
 import Filter from "@/components/filter";
+import CardDisplay from "./card-display";
 
 export default function Carseach() {
-  const handleCardClick = () => {
-    // Replace the URL with your actual Calendly link
-    window.location.href = "https://calendly.com/your-username/15min";
-  };
+  
   const [carsData, setCarsData] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState('All');
+  const [showCardDisplay, setShowCardDisplay] = useState(false);
+  const [selectedCar, setSelectedCar] = useState(null);
   const carTypes = ['Economy', 'SUV', 'Luxury'];
+
+  const handleCardClick = (car) => {
+    setSelectedCar(car);
+    setShowCardDisplay(true);
+  };
 
   useEffect(() => {
     // Fetch your car data here and set it in the carsData state
@@ -23,6 +28,7 @@ export default function Carseach() {
     // Then set the filteredCars state to the full car data initially
     setFilteredCars(carsData);
   }, []);
+
 
   const handleFilterClick = () => {
     setShowFilters(!showFilters);
@@ -39,14 +45,23 @@ export default function Carseach() {
     });
     setFilteredCars(filtered);
   };
+  const handleClose = () => {
+    setShowCardDisplay(false);
+  };
   
   
 
   return (
-    (<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+    {showCardDisplay &&
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
+        <CardDisplay car={selectedCar} onClose={handleClose} />
+      </div>
+    }
+    <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative ${showCardDisplay ? 'filter blur-md' : ''}`}>
       <div className="flex justify-between items-center py-4">
-      <CarIcon className="text-gray-600 m-2" />
-      <Filter/>
+        <CarIcon className="text-gray-600 m-2" />
+        <Filter/>
         <div className="flex space-x-2">
           <div className="flex items-center bg-gray-100 rounded overflow-hidden">
           </div>
@@ -246,7 +261,8 @@ export default function Carseach() {
         </CardContent>
       </Card>
       </div>
-    </div>)
+      </div>
+  </>
   );
 }
 
