@@ -51,7 +51,7 @@ export default function Nav() {
     <a className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
     <Image src="/Logo.jpeg" alt="Logo" width={50} height={50} />
       <span className="font-bold hidden sm:block" style={{color:'black'}}>AMO 
-        <span style={{color: '#a02820'}}> AUTO SALES</span>
+        <span style={{color: '#a02820'}}> AUTO</span>
       </span>
     </a>
 </div>
@@ -74,7 +74,7 @@ export default function Nav() {
   <div className="sm:hidden cursor-pointer py-4 flex items-center">
     <Image src="/Logo.jpeg" alt="Logo" width={50} height={50} className="mr-2" />
     <span className="font-bold text-black">AMO 
-      <span className="text-[#a02820]"> AUTO SALES</span>
+      <span className="text-[#a02820]"> AUTO</span>
     </span>
   </div>
 </SheetTrigger>
