@@ -9,7 +9,7 @@ export default function Home() {
   const isBuyPage = router.pathname === '/cars-for-buy';
 
 
-  // Function to navigate to the cars for buy page
+
   const navigateToBuyPage = () => {
     router.push('/cars-for-buy');
 

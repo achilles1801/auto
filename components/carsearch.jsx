@@ -22,10 +22,6 @@ export default function Carseach() {
   };
 
   useEffect(() => {
-    // Fetch your car data here and set it in the carsData state
-    // For example:
-    // setCarsData(fetchCarData());
-    // Then set the filteredCars state to the full car data initially
     setFilteredCars(carsData);
   }, []);
 

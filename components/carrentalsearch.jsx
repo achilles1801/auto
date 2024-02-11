@@ -7,7 +7,6 @@ import Filter from "@/components/filter";
 
 export default function Carseach() {
   const handleCardClick = () => {
-    // Replace the URL with your actual Calendly link
     window.location.href = "https://calendly.com/your-username/15min";
   };
   const [carsData, setCarsData] = useState([]);
@@ -17,10 +16,6 @@ export default function Carseach() {
   const carTypes = ['Economy', 'SUV', 'Luxury'];
 
   useEffect(() => {
-    // Fetch your car data here and set it in the carsData state
-    // For example:
-    // setCarsData(fetchCarData());
-    // Then set the filteredCars state to the full car data initially
     setFilteredCars(carsData);
   }, []);
 
